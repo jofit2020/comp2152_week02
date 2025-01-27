@@ -9,7 +9,26 @@ diceOptions = [1, 2, 3, 4, 5, 6]
 combatStrength = int(input("Enter your combat Strength: "))
 mCombatStrength = int(input("Enter the monster's combat Strength: "))
 
+if type(combatStrength)!="int" or type(mCombatStrength)!="int":
+    print("Data type is not Int")
+
 weapons=["Fist","Knife","Club","Gun","Bomb","Nuclear bomb"]
+weaponRoll=random.randint(1,6)
+
+if weaponRoll >=1 and  weaponRoll<=6:
+    selectedWeapon=weapons[weaponRoll-1]
+    print("Hero's weapon {0}",selectedWeapon)
+
+if weaponRoll <=2:
+    print("You rolled a weak weapon, friend")
+elif weaponRoll <=4:
+    print("Your weapon is meh")
+else:
+    print("Nice Weapon,Friend")
+
+if selectedWeapon != "Fist":
+    print("Thank goodness you didn't roll the fist ..")
+
 
 input("Roll the dice for your health points (Press enter)")
 healthPoints = random.choice(diceOptions)
